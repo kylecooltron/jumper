@@ -1,0 +1,27 @@
+director:
+
+members
+methods
+
+PARACHUTE:
+
+chutes_arrangement
+chutes
+check_chutes
+
+
+WORD: make a class with these things. make an small array with words 
+
+word_list
+letters_list = []
+revealed_list = []
+
+
+is_letter_in_word()
+reveal_letter() 
+
+GUESSER:
+
+#come up with word list that will come up with a word and break them down into an array of letters (letter_list)
+#go to director and the init method make a word class, main game loop - call taht method where it chooses new word puts into list) 
+#make gif play when lose
