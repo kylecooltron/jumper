@@ -39,7 +39,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print()
+
+        inp = input("player")
 
     def _do_updates(self):
         """See if the player was right or not, and update parachute and revealed letters
@@ -47,7 +48,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print()
+
+        win = self._parachute.remove_rope()
 
     def _do_outputs(self):
         """Display the current state of the parachute and revealed letters
@@ -56,5 +58,6 @@ class Director:
             self (Director): An instance of Director.
         """
 
-        # call parachutes display method
+        # Display the current state of the parachute
+        # extra notes: calls _parachutes display method and prints the value it returns
         self._parachute.display_parachute()
