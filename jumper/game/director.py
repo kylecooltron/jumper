@@ -37,7 +37,8 @@ class Director:
 
         # This code will run once at the start of the game
         # You can call a function here from the Word class that chooses a random word from a list
-        # then the Word class needs to break that word down into into a list of letters into the _letters_list attribute
+        # then either a new or that same method in Word class needs to break the word down into into a list of letters
+        # and store it in the _letters_list attribute
 
         # then simply uncomment the following code: (and remove Kyle's test code)
         #
@@ -81,12 +82,13 @@ class Director:
             self (Director): An instance of Director.
         """
 
-        # You guys need to call a method of the Word class HERE that
+        # You guys need to call a method of the Word class HERE (or create a Guesser class) that
         # gets input from the player and makes sure it's a single letter
         # in that method you also need to make sure it has not already been revealed
         # you can call the self._word.is_letter_in_list(letter,list) which accepts any letter and list
         # if it returns true you need to tell the player something like "you've already guessed that"
         # and have them try again
+        # (if you do use a Guesser class, make sure it communicates the letter input to the Word class using self._word._guessed_letter = whatever)
 
         # *
         # * * * Kyle's test code - - - - - - - - RAMOVE LATER
