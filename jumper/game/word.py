@@ -1,6 +1,7 @@
 
 
 # Word Class
+# Authors: Kyle Coulon,
 
 class Word:
     """The word
@@ -8,10 +9,10 @@ class Word:
     The responsibility of word is to randomly select a word from a list and reveal letters from that word if the player guesses them
 
     Attributes:
-        _word_list (list[int]): a list of words 
-        _word_list (list[int]): a list of words
-        _word_list (list[int]): a list of words 
-        _word_list (list[int]): a list of words 
+        _word_list (list[string]): a list of words 
+        _letters_list (list[string]): a word broken up into letters as a list
+        _revealed_list (list[string]): starts as underscores "_" and reveals correctly guessed letters
+        _guessed_letter (string): holds the players guessed letter
     """
 
     def __init__(self):
@@ -32,6 +33,7 @@ class Word:
         self._guessed_letter = ""
 
     def reset_revealed_list(self):
+        # (Kyle wrote this method)
         """This function sets the _revealed_list to a bunch of underscore "_" characters
         the number of characters in the list is made equal to the length of the _letters_list
 
@@ -51,6 +53,7 @@ class Word:
             self._revealed_list.append("_")
 
     def display_revealed_list(self):
+        # (Kyle wrote this method)
         """Prints out the current _revealed_list
 
         Args:
@@ -68,6 +71,7 @@ class Word:
         print()
 
     def is_letter_in_list(self, letter, letters_list):
+        # (Kyle wrote this method)
         """Determines whether a certain letter appears in an list of strings
            This method is used by try_players_guess() below
 
@@ -92,6 +96,7 @@ class Word:
         return False
 
     def reveal_correct_letters(self, guessed_letter):
+        # (Kyle wrote this method)
         """Iterates through the _letters_list and reveal letters that match the guessed_letter
            in the corrosponding location in the _revealed_list
 
@@ -112,6 +117,7 @@ class Word:
                 self._revealed_list[i] = val
 
     def try_players_guess(self, guessed_letter):
+        # (Kyle wrote this method)
         """Checks if the players guessed letter is found in the letters_list
         If so, reveals each instance of that letter in the correct position on the _revealed_list
         If not, returns False

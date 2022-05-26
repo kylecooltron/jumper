@@ -13,6 +13,8 @@ class Director:
 
     Attributes:
         is_playing (boolean): Whether or not to keep playing.
+        _parachute (Parachute): an istance of Parachute.
+        _word (Word): an istance of Word.
     """
 
     def __init__(self):
@@ -67,7 +69,7 @@ class Director:
             self._do_updates()
             self._do_outputs()
 
-        # This code will run after the game loop is broken:
+        # This code will run after the game loop is broken: (Kyle's code)
         # print a bunch of dots to make it seem like we are falling
         for x in range(0, 30):
             print(".")
@@ -98,6 +100,7 @@ class Director:
         # *
 
     def _do_updates(self):
+        # (Kyle wrote this method)
         """See if the player was right or not, and update parachute and revealed letters
 
         Args:
@@ -121,6 +124,7 @@ class Director:
                 self._is_playing = False
 
     def _do_outputs(self):
+        # (Kyle wrote this method)
         """Display the current state of the parachute and revealed letters
 
         Args:

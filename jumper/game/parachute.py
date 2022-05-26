@@ -1,7 +1,7 @@
 import random
 
 # Parachute Class
-# Author: Kyle Coulon
+# Authors: Kyle Coulon,
 
 
 class Parachute:
@@ -17,6 +17,7 @@ class Parachute:
     """
 
     def __init__(self):
+        # (Kyle's code)
         """Constructs a new Parachute.
 
         Args:
@@ -38,24 +39,25 @@ class Parachute:
             nothing
         """
 
-        # update _ropes_display array
+        # update _ropes_display array (Kyle's code)
         self._ropes_display = [
             " ", " ", self._ropes[0], self._ropes[1], self._ropes[2], "\n",
             " ", self._ropes[3], self._ropes[4], self._ropes[5], self._ropes[6],
             self._ropes[7], "\n", " ", self._ropes[8], " ", " ", " ", self._ropes[9], "\n",
             " ", " ", self._ropes[10], " ", self._ropes[11], "\n"]
 
-        # print each value in that array
+        # print each value in that array (Kyle's code)
         # Loop through the array by incrementing the value of i
         for i in range(0, len(self._ropes_display)):
             print(self._ropes_display[i], end='')
 
-        # * * * HERE IS WHERE YOU NEED TO PRINT A LITTLE MAN FIGURE:
+        # * * * HERE IS WHERE SOMEONE NEEDS TO WRITE CODE TO PRINT A LITTLE MAN FIGURE:
 
         # print a blank space underneath
         print()
 
     def remove_rope(self):
+        # (Kyle's code)
         """Removes one of the parachute ropes
 
         Args:
