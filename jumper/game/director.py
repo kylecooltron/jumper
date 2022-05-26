@@ -1,5 +1,8 @@
 # import classes from other .py files here
 from game.parachute import Parachute
+from game.word import Word
+
+import time
 
 
 class Director:
@@ -20,6 +23,7 @@ class Director:
         """
         self._is_playing = True
         self._parachute = Parachute()
+        self._word = Word()
 
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -28,10 +32,47 @@ class Director:
             self (Director): an instance of Director.
         """
 
+        # display a few start up messages
+        print(f"\nWelcome to jumper!\n")
+
+        # This code will run once at the start of the game
+        # You can call a function here from the Word class that chooses a random word from a list
+        # then the Word class needs to break that word down into into a list of letters into the _letters_list attribute
+
+        # then simply uncomment the following code: (and remove Kyle's test code)
+        #
+        # # create a list of underscores "_" that is the same size
+        # self._word.reset_revealed_list()
+        # # display that starting list to the player
+        # self._word.display_revealed_list()
+        # # display the starting parachute for the first time
+        # self._parachute.display_parachute()
+        #
+        #
+
+        # *
+        # * * * Kyle's test code - - - - - - - - RAMOVE LATER
+        # manually setting up a word
+        self._word._letters_list = ["T", "E", "S", "T"]
+        self._word.reset_revealed_list()
+        self._word.display_revealed_list()
+        self._parachute.display_parachute()
+        # - - - - - - - - - - - - - - - -
+        # *
+
+        # main game loop runs until we lose
         while self._is_playing:
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
+
+        # This code will run after the game loop is broken:
+        # print a bunch of dots to make it seem like we are falling
+        for x in range(0, 30):
+            print(".")
+            time.sleep(0.02)
+        # Display a game-end message
+        print(f"SPLAT!\n\nYou just lost the game.\n")
 
     def _get_inputs(self):
         """ Get the next letter the player wants to guess
@@ -40,7 +81,19 @@ class Director:
             self (Director): An instance of Director.
         """
 
-        inp = input("player")
+        # You guys need to call a method of the Word class HERE that
+        # gets input from the player and makes sure it's a single letter
+        # in that method you also need to make sure it has not already been revealed
+        # you can call the self._word.is_letter_in_list(letter,list) which accepts any letter and list
+        # if it returns true you need to tell the player something like "you've already guessed that"
+        # and have them try again
+
+        # *
+        # * * * Kyle's test code - - - - - - - - RAMOVE LATER
+        # (guessed letter input should be handled in a method within the Word class)
+        self._word._guessed_letter = input("guess a letter: ")
+        # - - - - - - - - - - - - - - - -
+        # *
 
     def _do_updates(self):
         """See if the player was right or not, and update parachute and revealed letters
@@ -49,7 +102,21 @@ class Director:
             self (Director): An instance of Director.
         """
 
-        win = self._parachute.remove_rope()
+        # see if the player's guess was right
+        result = self._word.try_players_guess(self._word._guessed_letter)
+
+        # if the player guessed incorrectly
+        if not result:
+
+            # remove one our parachutes
+            concequence = self._parachute.remove_rope()
+
+            # if we just remoed the last rope, concequence will return True
+            if concequence:
+                # Player just lost the game!
+
+                # Setting _is_playing to False breaks the game loop
+                self._is_playing = False
 
     def _do_outputs(self):
         """Display the current state of the parachute and revealed letters
@@ -58,6 +125,8 @@ class Director:
             self (Director): An instance of Director.
         """
 
+        # Display the revealed list
+        self._word.display_revealed_list()
+
         # Display the current state of the parachute
-        # extra notes: calls _parachutes display method and prints the value it returns
         self._parachute.display_parachute()

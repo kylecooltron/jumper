@@ -50,6 +50,11 @@ class Parachute:
         for i in range(0, len(self._ropes_display)):
             print(self._ropes_display[i], end='')
 
+        # * * * HERE IS WHERE YOU NEED TO PRINT A LITTLE MAN FIGURE:
+
+        # print a blank space underneath
+        print()
+
     def remove_rope(self):
         """Removes one of the parachute ropes
 
