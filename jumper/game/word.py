@@ -32,6 +32,15 @@ class Word:
         self._revealed_list = []
         self._guessed_letter = ""
 
+    def set_letters_list(self, list):
+        self._letters_list = list
+
+    def get_guessed_letter(self):
+        return self._guessed_letter
+
+    def set_guessed_letter(self, letter):
+        self._guessed_letter = letter
+
     def reset_revealed_list(self):
         # (Kyle wrote this method)
         """This function sets the _revealed_list to a bunch of underscore "_" characters

@@ -56,7 +56,7 @@ class Director:
         # *
         # * * * Kyle's test code - - - - - - - - RAMOVE LATER
         # manually setting up a word
-        self._word._letters_list = ["T", "E", "S", "T"]
+        self._word.set_letters_list(["T", "E", "S", "T"])
         self._word.reset_revealed_list()
         self._word.display_revealed_list()
         self._parachute.display_parachute()
@@ -95,7 +95,7 @@ class Director:
         # *
         # * * * Kyle's test code - - - - - - - - RAMOVE LATER
         # (guessed letter input should be handled in a method within the Word class)
-        self._word._guessed_letter = input("guess a letter: ")
+        self._word.set_guessed_letter(input("guess a letter: "))
         # - - - - - - - - - - - - - - - -
         # *
 
@@ -108,7 +108,7 @@ class Director:
         """
 
         # see if the player's guess was right
-        result = self._word.try_players_guess(self._word._guessed_letter)
+        result = self._word.try_players_guess(self._word.get_guessed_letter())
 
         # if the player guessed incorrectly
         if not result:
