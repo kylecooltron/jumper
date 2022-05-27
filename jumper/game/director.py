@@ -123,6 +123,8 @@ class Director:
                 # Setting _is_playing to False breaks the game loop
                 self._is_playing = False
 
+        # *** SOMEONE NEEDS TO WRITE A METHOD HERE TO CHECK IF THE PLAYER HAS GUESSED ALL THE LETTERS!!!!!!!!!!!!!!!!!!!!!
+
     def _do_outputs(self):
         # (Kyle wrote this method)
         """Display the current state of the parachute and revealed letters

@@ -1,6 +1,13 @@
 # Seeker
 
-Blah Blah intro <i>Jumper</i> The rules are simple. Description.
+()
+
+This is the readme file for a game called <i>Jumper</i> The rules of jumper are simple.
+First, the computer decides on a random word that the player has to guess.
+It will then display a list of underscores "\_" representing the letters of that word.
+A parachute made out of lines is then shown. This parachute represents how many guesses the player has left.
+The player is asked to guess a letter, and if the letter is in the random word, it is revealed in the list of underscores.
+If the player runs out of parachute ropes they lose.
 
 ---
 
@@ -20,7 +27,7 @@ The project files and folders are organized as follows:
 
 ```
 root                    (project root folder)
-+-- seeker              (source code for game)
++-- jumper              (source code for game)
   +-- game              (specific classes)
   +-- __main__.py       (program entry point)
 +-- README.md           (general info)
