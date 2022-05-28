@@ -52,6 +52,61 @@ class Parachute:
             print(self._ropes_display[i], end='')
 
         # * * * HERE IS WHERE SOMEONE NEEDS TO WRITE CODE TO PRINT A LITTLE MAN FIGURE:
+    
+    #(lourenzo code: draw parachuter)
+class Draw:
+   
+ def draw__(self):
+    self.Wrong = 1
+    if self.Wrong == 1:
+        print()
+        print(' ____ ')
+        print('/____\ ')
+        print('\    / ')
+        print(' \  / ')
+        print('  O ')
+        print(' /|\ ')
+        print(' / \ ')
+        print()
+        print('^^^^^^^')
+        
+    elif self.Wrong == 2:
+        print()
+        print('/____\ ')
+        print('\    / ')
+        print(' \  / ')
+        print('  O ')
+        print(' /|\ ')
+        print(' / \ ')
+        print()
+        print('^^^^^^^')
+        
+    elif self.Wrong == 3:
+        print()
+        print('\   / ')
+        print(' \ / ')
+        print('  O ')
+        print(' /|\ ')
+        print(' / \ ')
+        print()
+        print('^^^^^^^')
+        
+    elif self.Wrong == 4:
+        print()
+        print(' \ / ')
+        print('  O ')
+        print(' /|\ ')
+        print(' / \ ')
+        print()
+        print('^^^^^^^')
+        
+    elif self.Wrong == 5:
+        print()
+        print('  X ')
+        print(' /|\ ')
+        print(' / \ ')
+        print()
+        print('^^^^^^^')
 
         # print a blank space underneath
         print()
