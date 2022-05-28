@@ -1,7 +1,8 @@
-
+import random
+from word import random
 
 # Word Class
-# Authors: Kyle Coulon,
+# Authors: Kyle Coulon, Sean Layton, Lourenzo Kodama
 
 class Word:
     """The word
@@ -25,12 +26,15 @@ class Word:
         Args:
             self (Word): An instance of Word.
         """
-        # I haven't used this attribute, but I'm putting it here as an example of what name you could use
-        # self._word_list = ["parachute", "computer", "example"]
-
+        #(Sean Layton)
+        self._word_list = []
         self._letters_list = []
         self._revealed_list = []
         self._guessed_letter = ""
+
+    def get_word_list():
+        word = random.choice(word,list)
+        return word.upper()
 
     def set_letters_list(self, list):
         self._letters_list = list
@@ -42,7 +46,6 @@ class Word:
         self._guessed_letter = letter
 
     def reset_revealed_list(self):
-        # (Kyle wrote this method)
         """This function sets the _revealed_list to a bunch of underscore "_" characters
         the number of characters in the list is made equal to the length of the _letters_list
 

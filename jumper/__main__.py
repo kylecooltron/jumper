@@ -1,5 +1,5 @@
 # Jumper Game - Team Project
-# Authors: Kyle Coulon,
+# Authors: Kyle Coulon, Sean Layton, Lourenzo Kodama
 
 
 from game.director import Director

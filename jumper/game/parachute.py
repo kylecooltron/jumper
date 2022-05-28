@@ -1,7 +1,7 @@
 import random
 
 # Parachute Class
-# Authors: Kyle Coulon,
+# Authors: Kyle Coulon, Sean Layton, Lourenzo Kodama
 
 
 class Parachute:

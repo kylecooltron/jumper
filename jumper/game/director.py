@@ -1,6 +1,6 @@
 # import classes from other .py files here
-from game.parachute import Parachute
-from game.word import Word
+from parachute import Parachute
+from word import Word
 
 import time
 
@@ -52,11 +52,7 @@ class Director:
         # self._parachute.display_parachute()
         #
         #
-
-        # *
-        # * * * Kyle's test code - - - - - - - - RAMOVE LATER
-        # manually setting up a word
-        self._word.set_letters_list(["T", "E", "S", "T"])
+        self._word.set_letters_list()
         self._word.reset_revealed_list()
         self._word.display_revealed_list()
         self._parachute.display_parachute()
