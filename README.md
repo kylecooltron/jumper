@@ -41,3 +41,4 @@ root                    (project root folder)
 
 - Kyle Coulon (kylejcoulon@gmail.com)
 - Elijah Whitchurch
+- lourenzo kodama
