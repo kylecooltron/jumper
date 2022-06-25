@@ -40,3 +40,4 @@ root                    (project root folder)
 ## Authors
 
 - Kyle Coulon (kylejcoulon@gmail.com)
+- Elijah Whitchurch
