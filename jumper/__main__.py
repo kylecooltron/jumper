@@ -1,4 +1,4 @@
-# Jumper Game - Team Project
+# Jumper Game
 # Author: Kyle Coulon
 from game.word import Word
 from game.parachute import Parachute
