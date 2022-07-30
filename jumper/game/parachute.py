@@ -1,8 +1,5 @@
 import random
 
-# Parachute Class
-# Authors: Kyle Coulon, Sean Layton, Lourenzo Kodama
-
 
 class Parachute:
     """The parachute
@@ -17,7 +14,6 @@ class Parachute:
     """
 
     def __init__(self):
-        # (Kyle's code)
         """Constructs a new Parachute.
 
         Args:
@@ -29,6 +25,9 @@ class Parachute:
                        "_", "_", "\\", "\\", "/", "\\", "/"]
         self._ropes_display = []
 
+    def get_ropes_left(self):
+        return self._ropes_left
+
     def display_parachute(self):
         """Constructs and prints a string that is a visual representation of the parachutes current state
 
@@ -39,80 +38,25 @@ class Parachute:
             nothing
         """
 
-        # update _ropes_display array (Kyle's code)
+        # update _ropes_display array
         self._ropes_display = [
             " ", " ", self._ropes[0], self._ropes[1], self._ropes[2], "\n",
             " ", self._ropes[3], self._ropes[4], self._ropes[5], self._ropes[6],
             self._ropes[7], "\n", " ", self._ropes[8], " ", " ", " ", self._ropes[9], "\n",
             " ", " ", self._ropes[10], " ", self._ropes[11], "\n"]
 
-        # print each value in that array (Kyle's code)
+        # print each value in that array
         # Loop through the array by incrementing the value of i
         for i in range(0, len(self._ropes_display)):
             print(self._ropes_display[i], end='')
 
         # * * * HERE IS WHERE SOMEONE NEEDS TO WRITE CODE TO PRINT A LITTLE MAN FIGURE:
-    
-    #(lourenzo code: draw parachuter)
-class Draw:
-   
- def draw__(self):
-    self.Wrong = 1
-    if self.Wrong == 1:
-        print()
-        print(' ____ ')
-        print('/____\ ')
-        print('\    / ')
-        print(' \  / ')
-        print('  O ')
-        print(' /|\ ')
-        print(' / \ ')
-        print()
-        print('^^^^^^^')
-        
-    elif self.Wrong == 2:
-        print()
-        print('/____\ ')
-        print('\    / ')
-        print(' \  / ')
-        print('  O ')
-        print(' /|\ ')
-        print(' / \ ')
-        print()
-        print('^^^^^^^')
-        
-    elif self.Wrong == 3:
-        print()
-        print('\   / ')
-        print(' \ / ')
-        print('  O ')
-        print(' /|\ ')
-        print(' / \ ')
-        print()
-        print('^^^^^^^')
-        
-    elif self.Wrong == 4:
-        print()
-        print(' \ / ')
-        print('  O ')
-        print(' /|\ ')
-        print(' / \ ')
-        print()
-        print('^^^^^^^')
-        
-    elif self.Wrong == 5:
-        print()
-        print('  X ')
-        print(' /|\ ')
-        print(' / \ ')
-        print()
-        print('^^^^^^^')
-
-        # print a blank space underneath
+        print('   o ')
+        print('  /|\ ')
+        print('  / \ ')
         print()
 
     def remove_rope(self):
-        # (Kyle's code)
         """Removes one of the parachute ropes
 
         Args:

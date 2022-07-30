@@ -1,8 +1,5 @@
 import random
-from word import random
 
-# Word Class
-# Authors: Kyle Coulon, Sean Layton, Lourenzo Kodama
 
 class Word:
     """The word
@@ -26,15 +23,11 @@ class Word:
         Args:
             self (Word): An instance of Word.
         """
-        #(Sean Layton)
         self._word_list = []
         self._letters_list = []
         self._revealed_list = []
+        self._already_guessed = []
         self._guessed_letter = ""
-
-    def get_word_list():
-        word = random.choice(word,list)
-        return word.upper()
 
     def set_letters_list(self, list):
         self._letters_list = list
@@ -44,6 +37,12 @@ class Word:
 
     def set_guessed_letter(self, letter):
         self._guessed_letter = letter
+
+    def choose_word(self):
+
+        word = random.choice(
+            open('jumper/game/word_list.txt').read().splitlines())
+        self.set_letters_list([char for char in word])
 
     def reset_revealed_list(self):
         """This function sets the _revealed_list to a bunch of underscore "_" characters
@@ -65,7 +64,6 @@ class Word:
             self._revealed_list.append("_")
 
     def display_revealed_list(self):
-        # (Kyle wrote this method)
         """Prints out the current _revealed_list
 
         Args:
@@ -83,7 +81,6 @@ class Word:
         print()
 
     def is_letter_in_list(self, letter, letters_list):
-        # (Kyle wrote this method)
         """Determines whether a certain letter appears in an list of strings
            This method is used by try_players_guess() below
 
@@ -108,7 +105,6 @@ class Word:
         return False
 
     def reveal_correct_letters(self, guessed_letter):
-        # (Kyle wrote this method)
         """Iterates through the _letters_list and reveal letters that match the guessed_letter
            in the corrosponding location in the _revealed_list
 
@@ -129,7 +125,6 @@ class Word:
                 self._revealed_list[i] = val
 
     def try_players_guess(self, guessed_letter):
-        # (Kyle wrote this method)
         """Checks if the players guessed letter is found in the letters_list
         If so, reveals each instance of that letter in the correct position on the _revealed_list
         If not, returns False
@@ -145,16 +140,23 @@ class Word:
 
         if self.is_letter_in_list(guessed_letter, self._letters_list):
 
-            # the guess was correct
-            print("\n\n\nYou guessed correctly!\n")
+            if guessed_letter in self._already_guessed:
+                print("\n\n\nTry a different letter.\n")
+            else:
 
-            # reveal the correct letters in the _revealed_list
-            self.reveal_correct_letters(guessed_letter)
+                # add it to our guessed list
+                self._already_guessed.append(guessed_letter)
+                # reveal the correct letters in the _revealed_list
+                self.reveal_correct_letters(guessed_letter)
+                # check to see if the player just won
+                if not "_" in self._revealed_list:
+                    return "YOU WON!"
+                # the guess was correct
+                print("\n\n\nYou guessed correctly!\n")
 
+            # return correct guess
             return True
-
         else:
-
             # the guess was wrong
             print("\n\n\nIncorrect.\n")
             return False

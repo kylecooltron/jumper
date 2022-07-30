@@ -1,6 +1,4 @@
-# Seeker
-
-()
+# Jumper
 
 This is the readme file for a game called <i>Jumper</i> The rules of jumper are simple.
 First, the computer decides on a random word that the player has to guess.
